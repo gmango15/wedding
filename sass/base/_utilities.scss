@@ -1,0 +1,50 @@
+.abscenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.border--right {
+  border-right: 1px solid $primary-color;
+}
+
+.img__footer {
+  transform: translateY(50%);
+  max-width: 60rem;
+  display: inline-block;
+  & img {
+    width: 100%;
+  }
+}
+.nav--hidden {
+  transform: translateY(-250px);
+  transition: transform 0.7s ease-in;
+}
+
+.cta--hidden {
+  transform: translatex(50px);
+  transition: transform 0.7s ease-in;
+}
+
+.section--animation {
+  animation: section-slide 0.8s;
+  animation-fill-mode: backwards;
+}
+
+.attribution {
+  margin-top: 1rem;
+}
+.attribution > a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.wedparty--slide {
+  transform: translatey(700px);
+}
+
+.border--right {
+  border-right: 1px solid $primary-color;
+}

@@ -1,0 +1,33 @@
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+@import "abstract/functions";
+@import "components/button";
+@import "components/slider";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/countdown";
+@import "layout/schedule";
+@import "layout/wedparty";
+@import "layout/rsvp";
+@import "layout/ourstory";
+@import "layout/faq";
+
+footer {
+  height: 150px;
+  background-color: lighten($secondary-color-dark, 18%);
+  padding-top: 2rem;
+  @include for-size(phone-only) {
+    height: 250px;
+  }
+  & > p {
+    font-size: 3rem;
+  }
+  & hr {
+    width: 100px;
+    margin: 1rem auto 0 auto;
+  }
+}

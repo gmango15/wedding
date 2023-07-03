@@ -1,0 +1,36 @@
+.header {
+  max-width: 100%;
+  height: 100vh;
+  background-color: $primary-color-light;
+}
+
+.title {
+  color: $background-gray;
+  font-family: "Parisienne", cursive;
+  @include titlecenter;
+
+  & p:nth-child(1) {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+  &__mainheading {
+    font-size: 8rem;
+    padding: 0 1rem;
+    @include for-size(tablet-landscape-down) {
+      font-size: 6rem;
+    }
+    @include for-size(phone-only) {
+      font-size: 5rem;
+    }
+  }
+
+  &__subheading {
+    font-size: 2.5rem;
+    font-family: "Cormorant", serif;
+    padding: 1rem 1rem;
+
+    @include for-size(phone-only) {
+      font-size: 2rem;
+    }
+  }
+}

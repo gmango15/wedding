@@ -1,0 +1,21 @@
+h2 {
+  color: $primary-font-gray;
+  font-family: "Parisienne", cursive;
+  font-size: 5rem;
+  font-weight: 100;
+  @include for-size(phone-only) {
+    font-size: 4rem;
+  }
+}
+h3 {
+  color: $primary-font-gray;
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  font-weight: 100;
+}
+h4 {
+  color: $primary-font-gray;
+  font-family: "Cormorant", serif;
+  font-size: 2rem;
+  margin: 1rem;
+}

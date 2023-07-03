@@ -1,0 +1,78 @@
+.story__container {
+  max-width: 1240px;
+  margin: 10rem auto 10rem auto;
+  padding: 0 2rem;
+  & h2 {
+    margin: 4rem 0;
+  }
+  & p {
+    padding: 0 8rem;
+    line-height: 1.6;
+    @include for-size(phone-only) {
+      padding: 0 2rem;
+    }
+  }
+}
+.story {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 6rem;
+  padding: 2rem 2rem;
+  border-radius: 6px;
+
+  @include for-size(tablet-landscape-down) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include for-size(phone-only) {
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+  }
+}
+.flip-card {
+  perspective: 1000px;
+  min-height: 300px;
+
+  &:hover .story__card {
+    transform: rotateY(180deg);
+  }
+}
+.story__card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  &--front,
+  &--back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    padding: 4rem 0;
+  }
+  &--header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 4rem;
+    & p:last-child {
+      text-transform: uppercase;
+      color: red;
+      font-size: 1.2rem;
+    }
+  }
+  &--front {
+    background-color: $primary-color-light;
+  }
+  &--back {
+    transform: rotateY(180deg);
+    background-color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    & > img {
+      width: 9rem;
+      margin: 0 auto;
+    }
+  }
+}

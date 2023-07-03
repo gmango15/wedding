@@ -1,0 +1,30 @@
+.schedule__container {
+  padding: 6rem 2rem 0 2rem;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+.schedule__header {
+  margin: 5rem 0 5rem 0;
+}
+.schedule__body {
+  display: flex;
+  gap: 1rem;
+  background-color: $primary-color-light;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  margin: 5rem 0;
+}
+.schedule__cards {
+  padding: 10rem 5rem;
+  @include for-size(phone-only) {
+    padding: 5rem;
+  }
+  flex: 1 1 0;
+  & time {
+    display: inline-block;
+    margin: 1rem;
+  }
+  &--icon {
+    width: 5rem;
+  }
+}
