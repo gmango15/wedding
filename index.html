@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Parisienne&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Great+Vibes&family=Parisienne&family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <title>Marblessed</title>
   </head>
@@ -49,15 +49,27 @@
         </ul>
       </nav>
       <header class="header">
-        <figure></figure>
-        <figure></figure>
-        <figure></figure>
-        <figure></figure>
-        <figure></figure>
+        <figure class="slider__cards"></figure>
+        <figure class="slider__cards"></figure>
+        <figure class="slider__cards"></figure>
+        <figure class="slider__cards"></figure>
+        <figure class="slider__cards"></figure>
+        <div class="slider__button--container">
+          <button class="slider__button"></button>
+          <button class="slider__button"></button>
+          <button class="slider__button default"></button>
+          <button class="slider__button"></button>
+          <button class="slider__button"></button>
+        </div>
+        <div>
+          <button class="slider__button--prev">&lt</button>
+          <button class="slider__button--next">&#62</button>
+        </div>
         <div class="title">
-          <p class="title__subheading">We are getting Married!</p>
           <h1 class="title__mainheading">Jollina & Glen</h1>
-          <p class="title__subheading"><i>01.05.2024</i></p>
+          <hr>
+          <p class="title__subheading">We are getting Married!</p>
+          <hr>
         </div>
       </header>
       <section id="whenwhere" class="countdown__container">
@@ -214,12 +226,12 @@
           <div class="wedparty__body">
             <div class="wedparty__body--card">
               <div>
-                <img src="img/paola.jpeg" height="300px" width="300px"" alt="" />
+                <img src="img/paola.jpeg" class="wedparty__body--img" alt="" />
                 <h3>Paola Banaga</h3>
                 <h4>Maid of Honor</h4>
               </div>
-              <div>
-                <img src="img/ricky.jpg" height="300px" width="300px"" alt="" />
+              <div>                
+                <img src="img/ricky.jpg" class="wedparty__body--img" alt="" />
                 <h3>Ricky Mesa</h3>
                 <h4>Best Man</h4>
               </div>
@@ -229,7 +241,7 @@
                 <h3>Bridesmaids</h3>
                 <p>Allyssa Goluya</p>
                 <p>Eilyn Yatco</p>
-                <p>Abby Macabante</p>
+                <p>Abby Gail Macabante</p>
                 <p>Charmaine Sagun</p>
                 <p>Camille Cabral</p>
                 <p>Karen Catherine Aquino</p>
@@ -248,17 +260,16 @@
             </div>
             <div class="wedparty__body--card">
               <div><h3>Principal Sponsors</h3>
-              <p>Patria and Jerome Jorda</p>
-              <p>Justiene Sebastian & John Michael Jorda</p>
-              <p>Gael & Allen Rosero </p></div>
-              <div><h3>Secondary Sponsors</h3>
-              <p>Patria and Jerome Jorda</p>
+              <p>Shinette Goluya & </p>
               <p>Justienne Sebastian & John Michael Jorda</p>
               <p>Gael & Allen Rosero </p></div>
+              <div><h3>Secondary Sponsors</h3>
+              <p>Patria Jorda and Jerome Jorda</p>
+              <p>Justienne Sebastian & John Michael Jorda</p>
+              <p>Abby Gael Rosero & Rony Allen Rosero </p></div>
             </div>
           </div>
       </section>
-
       <section id="rsvp">
         <form
           class="rsvp__container section1"
@@ -267,30 +278,34 @@
         >
           <h2>Join Us</h2>
           <p>Please reserve before Nov 01, 2023. Tell us if you’re coming!</p>
-          <input type="text" name="entry.1271290073" id="Guestid" placeholder="GuestID" />
+          <input type="text" name="entry.1271290073" id="password" placeholder="Password" />
           <input type="text" id="name" name="entry.1819711508" placeholder="Full Name" />
           <input type="email" id="email" name="emailAddress" placeholder="Email" />
           <fieldset>
             <legend>Will you be Attending?</legend>
             <div>
-            <label for="Yes" class="radio__button">Yes</label>
-            <input type="radio" id="Yes" name="entry.155075271" value="Yes" checked></div>
+            <label for="yes" class="radio__button">Yes</label>
+            <input type="radio" id="yes" name="entry.155075271" value="Yes" checked></div>
             <div>
-            <label for="No" class="radio__button">No</label>
-            <input type="radio" id="No" name="entry.155075271" value="No"></div>
+            <label for="no" class="radio__button">No</label>
+            <input type="radio" id="no" name="entry.155075271" value="No"></div>
           </fieldset>
-          <label for="guest-count">Number of Guests</label>
           <input
             type="number"
             id="guest-count"
             name="entry.1535517556"
             placeholder="Number of Guests"
           />
+          <input type="text" id="guest1" class="guest" name=""  placeholder="Guest1" />
+          <input type="text" id="guest2" class="guest" name=""  placeholder="Guest2" />
+          <input type="text" id="guest3" class="guest" name=""  placeholder="Guest3" />
+          <input type="text" id="guest4" class="guest" name=""  placeholder="Guest4" />
+          <input type="text" id="guest5" class="guest" name=""  placeholder="Guest5" />
           <textarea
             rows="10"
             name="entry.1837624289"
             id="message"
-            placeholder="Please write Name of all your guests attending"
+            placeholder="Leave us a message!"
           ></textarea>
           <div class="test">
             <button type="submit" id="submit">Submit</button>

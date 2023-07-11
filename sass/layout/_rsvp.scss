@@ -24,7 +24,6 @@ fieldset {
 input[type="text"],
 input[type="email"],
 input[type="number"] {
-  display: block;
   font-family: inherit;
   font-size: inherit;
   width: 100%;
@@ -53,4 +52,7 @@ input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 input[type="number"]:focus::placeholder {
   font-weight: 700;
+}
+.guest {
+  display: none;
 }

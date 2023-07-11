@@ -6,31 +6,39 @@
 
 .title {
   color: $background-gray;
-  font-family: "Parisienne", cursive;
+  font-family: "Great Vibes", cursive;
   @include titlecenter;
 
-  & p:nth-child(1) {
-    text-transform: uppercase;
-    font-size: 1.8rem;
-  }
   &__mainheading {
-    font-size: 8rem;
-    padding: 0 1rem;
+    font-size: 8.5rem;
+    padding: 2rem 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    animation: slideUp 1.5s ease-in;
+    animation-fill-mode: backwards;
     @include for-size(tablet-landscape-down) {
       font-size: 6rem;
     }
     @include for-size(phone-only) {
-      font-size: 5rem;
+      font-size: 3.5rem;
+      padding: 2rem 0;
     }
   }
-
   &__subheading {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     font-family: "Cormorant", serif;
     padding: 1rem 1rem;
+    text-transform: uppercase;
+    animation: slideUp 2s ease-in;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
 
     @include for-size(phone-only) {
-      font-size: 2rem;
+      font-size: 1.3rem;
     }
+  }
+  & hr {
+    height: 2px;
+    background-color: white;
   }
 }

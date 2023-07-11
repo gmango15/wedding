@@ -12,6 +12,19 @@ window.onscroll = () => {
   prevScrollpos = currentScrollPos;
 };
 
+// close nav on pressing a button
+const btn = document.querySelectorAll(".nav__link--btn");
+
+btn.forEach((bt) => {
+  bt.addEventListener("click", () => {
+    const width = innerWidth;
+    const check = document.querySelector("#checkbox__toggle");
+    if (check.checked === true && width < 1200) {
+      check.checked = false;
+    }
+  });
+});
+
 // intersection Observer Animate on Scroll
 const sections = document.querySelectorAll(".section1");
 const options = {
@@ -31,17 +44,42 @@ sections.forEach((section) => {
   observer.observe(section);
 });
 
-// close nav on pressing a button
-const btn = document.querySelectorAll(".nav__link--btn");
+// slider with breadcrumbs
+const sliderBtn = document.querySelectorAll(".slider__button");
+const sliderCard = document.querySelectorAll(".slider__cards");
+let currentSlide = 0;
+let defaultClick = document.querySelector(".default");
 
-btn.forEach((bt) => {
-  bt.addEventListener("click", () => {
-    const width = innerWidth;
-    const check = document.querySelector("#checkbox__toggle");
-    if (check.checked === true && width < 1200) {
-      check.checked = false;
+sliderBtn.forEach(function (sliderBt, index) {
+  sliderBt.addEventListener("click", () => {
+    for (let i = 0; i < sliderCard.length; i++) {
+      sliderCard[i].style.opacity = "0";
     }
+    sliderCard[index].style.opacity = "1";
+    currentSlide = index;
   });
+});
+defaultClick.click();
+
+const btnNext = document.querySelector(".slider__button--next");
+const btnPrev = document.querySelector(".slider__button--prev");
+
+btnNext.addEventListener("click", () => {
+  if (currentSlide === sliderCard.length - 1) {
+    currentSlide = 0;
+    sliderBtn[currentSlide].click();
+  } else {
+    sliderBtn[currentSlide + 1].click();
+  }
+});
+
+btnPrev.addEventListener("click", () => {
+  if (currentSlide === 0) {
+    currentSlide = sliderCard.length - 1;
+    sliderBtn[currentSlide].click();
+  } else {
+    sliderBtn[currentSlide - 1].click();
+  }
 });
 
 // Wedding Party Tabs
@@ -97,4 +135,31 @@ function initializeClock(id, endtime) {
 
 initializeClock("#countdown", deadline);
 
-const test = document.querySelector("#guest-count");
+// Form Guest Numbers
+let guestNumber = document.querySelector("#guest-count");
+let guestValue = document.querySelectorAll(".guest");
+
+guestNumber.addEventListener("input", () => {
+  guestValue.forEach((guest) => {
+    guest.style.display = "none";
+    guest.value = "";
+  });
+  for (let i = 0; i < guestNumber.value; i++) {
+    guestValue[i].style.display = "block";
+  }
+});
+
+// Form Attending
+let no = document.querySelector("#no");
+let yes = document.querySelector("#yes");
+let id = document.getElementById("message");
+
+no.addEventListener("click", () => {
+  guestNumber.style.display = "none";
+  id.style.display = "none";
+});
+
+yes.addEventListener("click", () => {
+  guestNumber.style.display = "block";
+  id.style.display = "block";
+});
